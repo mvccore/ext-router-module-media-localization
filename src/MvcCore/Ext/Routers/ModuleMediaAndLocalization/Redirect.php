@@ -15,6 +15,13 @@ namespace MvcCore\Ext\Routers\ModuleMediaAndLocalization;
 
 trait Redirect
 {
+	/**
+	 * When request is redirected by router configured behaviour, this method is 
+	 * called to correct media site version URL value and localization URL value 
+	 * in domain params array.
+	 * @param array $domainParams 
+	 * @return void
+	 */
 	protected function redirectCorrectDomainSystemParams (& $domainParams) {
 		$mediaVersionParamName = static::URL_PARAM_MEDIA_VERSION;
 		if (isset($domainParams[$mediaVersionParamName])) {

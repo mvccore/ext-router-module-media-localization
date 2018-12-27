@@ -15,6 +15,24 @@ namespace MvcCore\Ext\Routers\ModuleMediaAndLocalization;
 
 trait DomainRouteSetUp
 {
+	/**
+	 * This method is executed after module domain routing is done and before 
+	 * standard routing. So there could be already routed/defined current module 
+	 * domain route and that route could contain additional configuration for 
+	 * normal routing. This method is the place where to put special values 
+	 * from module domain route into router before standard routing. 
+	 * If there is defined in module domain route any constructor property
+	 * `allowedLocalizations`, then allowed localizations in router is defined
+	 * by this route property value. If there is also any `localization` param
+	 * in default params array, call localization router method to prepare 
+	 * request localization property.
+	 * If there is defined in module domain route any constructor property
+	 * `allowedMediaVersions`, then allowed media versions in router is defined
+	 * by this route property value. If there is also any `media_version` param
+	 * in default params array, call media site version router method to prepare 
+	 * request media site version property.
+	 * @return void
+	 */
 	protected function domainRoutingSetUpRouterByDomainRoute () {
 		// if domain route contains any allowed localizations configuration,
 		// set up router by this configuration
