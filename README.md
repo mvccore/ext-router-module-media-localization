@@ -11,8 +11,6 @@ This router is the way, how to route your requests in domain level with website 
 ## Outline  
 1. [Installation](#user-content-1-installation)  
 2. [Features](#user-content-2-features)  
-    2.1. [Features - Website Media Version Definition](#user-content-21-features---Website-media-version-definition)  
-    2.2. [Features - Localization Definition](#user-content-22-features---localization-definition)  
 3. [How It Works](#user-content-3-how-it-works)  
 4. [Usage](#user-content-4-usage) 
 
