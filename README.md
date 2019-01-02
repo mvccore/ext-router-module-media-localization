@@ -44,6 +44,7 @@ If there is not contained param `<media_version>` and/or `<localization>` in mat
 - `http://www.example.com/mobile/en-US/anything`
 - `http://www.example.com/de-DE/etwas`
 - `http://www.example.com/mobile/de-DE/etwas`
+
 How precisely is conained in URL address depends on advanced router configuration like allowed media version and more...
 
 [go to top](#user-content-outline)
