@@ -29,45 +29,24 @@ Extension has the same features as extensions bellow together:
 - [Features for `mvccore/ext-router-media`](https://github.com/mvccore/ext-router-media#user-content-2-features)  
 - [Features for `mvccore/ext-router-localization`](https://github.com/mvccore/ext-router-localization#user-content-2-features)  
 
-[go to top](#user-content-outline)
-
-### 2.1. Features - Website Media Version Definition
-Website media version could be contained in any module domain route as param named `<media_version>` match URL requests like this:
-- `http://www.example.com/anything`
-- `http://mobile.example.com/anything`
-```php
-new \MvcCore\Ext\Routers\Modules\Route([
-    "pattern"              => "//<media_version>.example.com",
-    "module"               => "main",
-    "constraints"          => ["media_version" => "www|mobile"],
-]);
-```
-If there is not contained param `<media_version>` in matched module domain route pattern, website media version param has to be contained (or is automaticly inserted) in URL address beginning like this:
-- `http://www.example.com/anything`
-- `http://www.example.com/mobile/anything`
-How precisely is conained in URL address depends on advanced router configuration like allowed media version and more...
-
-[go to top](#user-content-outline)
-
-### 2.2. Features - Localization Definition
-Localization could be contained in any module domain route as param named `<localization>` match URL requests like this:
-- `http://example.com/anything`
-- `http://en.example.com/anything`
+Website media version and localization could be contained in any module domain route as params named `<media_version>` and/or `<localization>` match URL requests like this:
 - `http://en-US.example.com/anything`
-- `http://de-DE.example.com/anything`
+- `http://de-DE.example.com/etwas`
+- `http://mobile.en-US.example.com/anything`
+- `http://mobile.de-DE.example.com/etwas`
 ```php
 new \MvcCore\Ext\Routers\Modules\Route([
-    "pattern"              => "//[<localization>.]example.com",
+    "pattern"              => "//[<media_version>.]<localization>.example.com",
     "module"               => "main",
-    "constraints"          => ["localization" => "-a-zA-Z"],
+    "constraints"          => ["media_version" => "www|mobile", "localization" => "-a-zA-Z0-9"],
 ]);
 ```
-If there is not contained param `<localization>` in matched module domain route pattern and matched route (or route to generate URL) is defined as localized route, localization param has to be contained (or is automaticly inserted) in URL address beginning like this:
-- `http://example.com/anything`
-- `http://example.com/en/anything`
-- `http://example.com/en-US/anything`
-- `http://example.com/de-DE/anything`
-How precisely is conained in URL address depends on advanced router configuration like allowed languages and more...
+If there is not contained param `<media_version>` and/or `<localization>` in matched module domain route pattern, website media version and/or localization param has to be contained (or is automaticly inserted) in URL address beginning like this:
+- `http://www.example.com/en-US/anything`
+- `http://www.example.com/mobile/en-US/anything`
+- `http://www.example.com/de-DE/etwas`
+- `http://www.example.com/mobile/de-DE/etwas`
+How precisely is conained in URL address depends on advanced router configuration like allowed media version and more...
 
 [go to top](#user-content-outline)
 
