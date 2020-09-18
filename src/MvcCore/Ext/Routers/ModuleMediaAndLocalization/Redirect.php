@@ -23,6 +23,7 @@ trait Redirect
 	 * @return void
 	 */
 	protected function redirectCorrectDomainSystemParams (& $domainParams) {
+		/** @var $this \MvcCore\Ext\Routers\ModuleMediaAndLocalization */
 		$mediaVersionParamName = static::URL_PARAM_MEDIA_VERSION;
 		if (isset($domainParams[$mediaVersionParamName])) {
 			$domainParams[$mediaVersionParamName] = $this->redirectMediaGetUrlValueAndUnsetGet(
