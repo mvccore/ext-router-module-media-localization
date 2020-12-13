@@ -2,7 +2,7 @@
 
 [![Latest Stable Version](https://img.shields.io/badge/Stable-v4.3.1-brightgreen.svg?style=plastic)](https://github.com/mvccore/ext-router-module-media-localization/releases)
 [![License](https://img.shields.io/badge/Licence-BSD-brightgreen.svg?style=plastic)](https://mvccore.github.io/docs/mvccore/4.0.0/LICENCE.md)
-![PHP Version](https://img.shields.io/badge/PHP->=5.3-brightgreen.svg?style=plastic)
+![PHP Version](https://img.shields.io/badge/PHP->=5.4-brightgreen.svg?style=plastic)
 
 MvcCore Router extension to manage multiple websites in single project, to manage website media versions website media versions (`full`/`tablet`/`mobile` for different templates/css/js files rendering, optionaly contained in URL address domain part or in URL address beinning) and to manage website localizations (language or language and locale, optionaly contained in URL address domain part or in URL address beinning), defined by domain routes, targeted by module property in URL completing.  
 
